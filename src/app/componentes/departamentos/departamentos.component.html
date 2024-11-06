@@ -1,0 +1,46 @@
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    
+    <div class="carousel-inner">
+        
+      <div class="carousel-item active" style="height: 300px;">
+        <svg class="bd-placeholder-img" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <image href="../../../assets/img/colombia.jpg" y="-100" width="100%" />
+        
+        </svg>
+        <div class="carousel-caption" style="text-align: center; top: 100px; padding: 0%;">
+            <h1>Departamentos</h1>
+          </div>
+          
+        
+      </div>
+      
+        
+      </div>
+    </div>
+
+<div class="col-10 mx-auto my-5">
+    <table class="table table-success table-striped">
+       <thead>
+        <tr>
+            <th>ID</th>
+            <th>Departamento</th>
+            <th>Consumo de Energía (GWh)</th>
+            <th>Población Aproximada</th>
+            
+        </tr>
+       </thead>
+       <tbody>
+        @for (item of consumoDepartamentos; track $index) {
+        <tr> 
+            <td>{{item.id}}</td>
+            <td>{{item.departamento}}</td>
+            <td>{{item.consumo}}</td>
+            <td>{{item.poblacion}}</td>
+            
+            
+            
+        </tr>
+    }
+       </tbody>
+    </table>
+</div>

@@ -1,0 +1,55 @@
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    
+    <div class="carousel-inner">
+        
+      <div class="carousel-item active" style="height: 300px;">
+        <svg class="bd-placeholder-img" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <image href="../../../assets/img/usuarios.jpg" y="-100" width="100%" />
+        
+        </svg>
+        <div class="carousel-caption" style="text-align: center; top: 100px; padding: 0%;">
+            <h1>Usuarios</h1>
+          </div>
+          
+        
+      </div>
+      
+        
+      </div>
+    </div>
+      
+  <div class="col-10 mx-auto my-5">
+   <table class="table table-success table-striped">
+       <thead>
+        <tr>
+            <th>Actualizar usuario <i class="bi bi-person-fill"></i></th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Ciudad</th>
+            <th>E_Mail</th>
+            <th>Suprimir</th>
+
+        </tr>
+       </thead>
+       <tbody>
+        @for (item of usuario; track $index) {
+        <tr> 
+            <td><a [routerLink]="['/editar-usuario', item.documento]">{{item.documento}}</a></td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellido}}</td>
+            <td>{{item.ciudad}}</td>
+            <td>{{item.email}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="borrarUsuario(item.documento)">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            
+            
+        </tr>
+    }
+       </tbody>
+    </table>
+
+
+</div>

@@ -1,0 +1,67 @@
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    
+  <div class="carousel-inner">
+      
+    <div class="carousel-item active" style="height: 300px;">
+      <svg class="bd-placeholder-img" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <image href="../../../assets/img/crear.jpg" y="-100" width="100%" />
+      
+      </svg>
+      <div class="carousel-caption" style="text-align: center; top: 100px; padding: 0%;">
+          <h1>Crear usuario</h1>
+        </div>
+        
+      
+    </div>
+    
+      
+    </div>
+  </div>
+
+<div class="col-10 mx-auto my-5">
+  <form [formGroup]="usuarioForm">
+
+    <div class="form-group" *ngIf="usuarioId == null">
+      <label for="documento">Documento:</label>
+      <input id="documento" class="form-control" formControlName="documento">
+      <div *ngIf="usuarioForm.get('documento')?.invalid && usuarioForm.get('documento')?.touched">
+        <small *ngIf="usuarioForm.get('documento')?.errors?.['required']">Documento es requerido.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" class="form-control" formControlName="nombre">
+      <div *ngIf="usuarioForm.get('nombre')?.invalid && usuarioForm.get('nombre')?.touched">
+        <small *ngIf="usuarioForm.get('nombre')?.errors?.['required']">Nombre es requerido.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input id="apellido" class="form-control" formControlName="apellido">
+      <div *ngIf="usuarioForm.get('apellido')?.invalid && usuarioForm.get('apellido')?.touched">
+        <small *ngIf="usuarioForm.get('apellido')?.errors?.['required']">Apellido es requerido.</small>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" class="form-control" formControlName="email">
+      <div *ngIf="usuarioForm.get('email')?.invalid && usuarioForm.get('email')?.touched">
+        <small *ngIf="usuarioForm.get('email')?.errors?.['required']">Email es requerido.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ciudad">Ciudad:</label>
+      <input id="ciudad" class="form-control" formControlName="ciudad">
+      <div *ngIf="usuarioForm.get('ciudad')?.invalid && usuarioForm.get('ciudad')?.touched">
+        <small *ngIf="usuarioForm.get('ciudad')?.errors?.['required']">Ciudad es requerido.</small>
+      </div>
+    </div>
+
+
+    <button type="button" class="btn btn-outline-primary" [class.disabled]="usuarioForm.invalid" [disabled]="usuarioForm.invalid" (click)="onSubmit()">
+      {{ usuarioId ? 'Actualizar' : 'Crear' }}
+    </button>
+    
+  </form>
+</div>
